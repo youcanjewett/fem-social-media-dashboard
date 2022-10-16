@@ -1,29 +1,32 @@
 @use "../util" as *;
 
 .cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: rem(30);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(30);
 
-    @include breakpoint(medium) {
-        grid-template-columns: repeat( 2, 1fr);
-        
-    }
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    @include breakpoint(large) {
-        grid-template-columns: repeat( 4, 1fr);
-        
-    }
+  @include breakpoint(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card {
-    position: relative;
-    overflow: hidden;;
+  position: relative;
+  overflow: hidden;
   background: var(--dark-card);
   color: var(--dark-text1);
   text-align: center;
   padding: rem(25);
   border-radius: rem(5);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--dark-card-hover);
+  }
 
   &--facebook {
     border-top: rem(5) solid var(--facebook);
@@ -34,17 +37,20 @@
   }
 
   &--instagram {
-padding-top: rem(30);
+    padding-top: rem(30);
     &::before {
-        content: '';
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        height: rem(5);
-        width: 100%;
-        background: linear-gradient(to right, var(--instagram-start), var(--instagram-end));
-       
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      height: rem(5);
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        var(--instagram-start),
+        var(--instagram-end)
+      );
     }
   }
 
@@ -59,6 +65,11 @@ padding-top: rem(30);
     height: rem(20);
     margin-top: rem(5);
     margin-bottom: rem(28);
+  }
+
+  &__subtitle {
+    font-size: rem(14);
+    font-weight: 700;
   }
 
   &__icon {
@@ -86,50 +97,51 @@ padding-top: rem(30);
     margin-bottom: rem(25);
   }
 
-    &__count {
-      color: var(--dark-text2);
-      font-weight: bold;
-      margin-bottom: rem(4);
-      letter-spacing: rem(-2);
-      line-height: 1;
+  &__count {
+    color: var(--dark-text2);
+    font-weight: bold;
+    margin-bottom: rem(4);
+    letter-spacing: rem(-2);
+    line-height: 1;
 
-      &--big {
-        font-size: rem(56);
-      }
-
-      &--small {
-      }
+    &--big {
+      font-size: rem(56);
     }
 
-    &__label {
-      color: var(--dark-text1);
-      font-size: rem(12);
-      text-transform: uppercase;
-      letter-spacing: rem(5);
-      font-weight: 400;
-      
+    &--small {
+        font-size: rem(32);
     }
-  
+  }
+
+  &__label {
+    color: var(--dark-text1);
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: rem(5);
+    font-weight: 400;
+  }
 
   &__change {
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: rem(12);;
+    font-size: rem(12);
     &--up {
-        color: var(--limegreen);
+      color: var(--limegreen);
     }
 
     &--down {
-        color: var(--brightred);
+      color: var(--brightred);
     }
 
     img {
-        margin-right: rem(4);
+      margin-right: rem(4);
     }
   }
 
   &__number {
   }
+
+  
 }
