@@ -20,4 +20,4 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 
-## See the live site [here](youcanjewett-social-media-dashboard.pages.dev)!
+## See the live site [here](https://youcanjewett-social-media-dashboard.pages.dev/)!
